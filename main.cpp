@@ -2,26 +2,30 @@
 
 using namespace std;
 
+const int SIZE = 3;
+char board[SIZE][SIZE] = {{' ', ' ', ' '},
+                          {' ', ' ', ' '},
+                          {' ', ' ', ' '}};
+
+void PrintBoard()
+{
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j) {
+            cout << "|" << board[i][j] << "|";
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
     system("chcp 65001");
-
-    const int SIZE = 3;
-    char board[SIZE][SIZE] = {{' ', ' ', ' '},
-                              {' ', ' ', ' '},
-                              {' ', ' ', ' '}};
 
     int row, col;
     bool draw;
 
     do {
-        for (int i = 0; i < SIZE; ++i) {
-            for (int j = 0; j < SIZE; ++j) {
-                cout << "|" << board[i][j] << "|";
-            }
-            cout << endl;
-        }
-
+        PrintBoard();
         cout << "Ход Крестика" << endl;
         do {
             do {
@@ -60,13 +64,7 @@ int main()
         }
 
 
-        for (int i = 0; i < SIZE; ++i) {
-            for (int j = 0; j < SIZE; ++j) {
-                cout << "|" << board[i][j] << "|";
-            }
-            cout << endl;
-        }
-
+        PrintBoard();
         cout << "Ход Нолика" << endl;
         do {
             do {
