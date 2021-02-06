@@ -12,6 +12,7 @@ int main()
                               {' ', ' ', ' '}};
 
     int row, col;
+    bool draw;
 
     do {
         for (int i = 0; i < SIZE; ++i) {
@@ -43,6 +44,18 @@ int main()
             (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') ||
             (board[2][0] == 'X' && board[1][1] == 'X' && board[0][2] == 'X')) {
             cout << "Выиграл Крестик" << endl;
+            break;
+        }
+        draw = true;
+        for (int i = 0; i < SIZE; ++i) {
+            for (int j = 0; j < SIZE; ++j) {
+                if (board[i][j] == ' ') {
+                    draw = false;
+                }
+            }
+        }
+        if (draw) {
+            cout << "Ничья!" << endl;
             break;
         }
 
@@ -78,8 +91,18 @@ int main()
             cout << "Выиграл Нолик" << endl;
             break;
         }
+        draw = true;
+        for (int i = 0; i < SIZE; ++i) {
+            for (int j = 0; j < SIZE; ++j) {
+                if (board[i][j] == ' ') {
+                    draw = false;
+                }
+            }
+        }
+        if (draw) {
+            cout << "Ничья!" << endl;
+            break;
+        }
 
     } while (true);
-
-
 }
