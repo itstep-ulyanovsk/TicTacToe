@@ -7,6 +7,8 @@ char board[SIZE][SIZE] = {{' ', ' ', ' '},
                           {' ', ' ', ' '},
                           {' ', ' ', ' '}};
 
+//
+
 void PrintBoard()
 {
     for (int i = 0; i < SIZE; ++i) {
