@@ -48,12 +48,20 @@ int main()
             do {
                 cout << "Введите номер строки (от  1 до 3) - ";
                 cin >> row;
-            } while (row-1 < 0 || row-1 > 2);
+                if (row - 1 < 0 || row - 1 > 2) {
+                    cout << "Вы вышли за диапазон, попробуйте еще раз! " << endl;
+                }
 
+            } while (row - 1 < 0 || row - 1 > 2);
+            
+            
             do {
                 cout << "Введите номер столбца (от  1 до 3) - ";
                 cin >> col;
             } while (col-1 < 0 || col-1 > 2);
+            if (col - 1 < 0 || col - 1 > 2) {
+                cout << "Вы вышли за диапазон, попробуйте еще раз! " << endl;
+            }
         } while (board[row-1][col-1] != ' ');
         board[row-1][col-1] = 'X';
 
@@ -81,11 +89,17 @@ int main()
             do {
                 cout << "Введите номер строки (от  1 до 3) - ";
                 cin >> row;
+                if (row - 1 < 0 || row - 1 > 2) {
+                    cout << "Вы вышли за диапазон, попробуйте еще раз! " << endl;
+                }
             } while (row-1 < 0 || row-1 > 2);
 
             do {
                 cout << "Введите номер столбца (от  1 до 3) - ";
                 cin >> col;
+                if (col - 1 < 0 || col - 1 > 2) {
+                    cout << "Вы вышли за диапазон, попробуйте еще раз! " << endl;
+                }
             } while (col-1 < 0 || col-1 > 2);
         } while (board[row-1][col-1] != ' ');
         board[row-1][col-1] = 'O';
