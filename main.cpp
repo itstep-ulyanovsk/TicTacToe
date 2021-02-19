@@ -47,7 +47,7 @@ int main()
             (board[0][2] == 'X' && board[1][2] == 'X' && board[2][2] == 'X') ||
             (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') ||
             (board[2][0] == 'X' && board[1][1] == 'X' && board[0][2] == 'X')) {
-            cout << "Выиграл Крестик" << endl;
+            cout << "Выиграл Крестик!" << endl;
             break;
         }
         draw = true;
@@ -59,7 +59,7 @@ int main()
             }
         }
         if (draw) {
-            cout << "Ничья!!!!" << endl;
+            cout << "Ничья!" << endl;
             break;
         }
 
@@ -86,7 +86,7 @@ int main()
             (board[0][2] == 'O' && board[1][2] == 'O' && board[2][2] == 'O') ||
             (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O') ||
             (board[2][0] == 'O' && board[1][1] == 'O' && board[0][2] == 'O')) {
-            cout << "Выиграл Нолик" << endl;
+            cout << "Выиграл Нолик!" << endl;
             break;
         }
         draw = true;
