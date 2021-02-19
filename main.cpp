@@ -2,6 +2,7 @@
 
 using namespace std;
 
+int counterX = 0, counterO = 0;
 const int SIZE = 3;
 char board[SIZE][SIZE] = { {'1', '2', '3'},
                           {'4', '5', '6'},
@@ -16,6 +17,64 @@ void PrintBoard()
         cout << endl;
     }
 }
+
+void Play(char player) {
+    int row = 0, col = 0;
+    int answear;
+    do
+    {
+        do {
+            cout << "Выберите клетку (от 1 до 9) - "; cin >> answear;
+            switch (answear)
+            {
+            case 1:
+                row = 0;
+                col = 0;
+                break;
+            case 2:
+                row = 0;
+                col = 1;
+                break;
+            case 3:
+                row = 0;
+                col = 2;
+                break;
+            case 4:
+                row = 1;
+                col = 0;
+                break;
+            case 5:
+                row = 1;
+                col = 1;
+                break;
+            case 6:
+                row = 1;
+                col = 2;
+                break;
+            case 7:
+                row = 2;
+                col = 0;
+                break;
+            case 8:
+                row = 2;
+                col = 1;
+                break;
+            case 9:
+                row = 2;
+                col = 2;
+                break;
+            }
+        } while (answear < 0 || answear > 10 || board[row][col] == 'Х' || board[row][col] == 'О');
+        board[row][col] = player;
+        if (player == 'Х') {
+            counterX++;
+        }
+        else {
+            counterO++;
+        }
+    } while (board[row][col] != 'Х' && board[row][col] != 'О');
+}
+
 
 int main()
 {
