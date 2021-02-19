@@ -1,5 +1,5 @@
 #include <iostream>
-
+// Проверка изменений во второй ветке
 using namespace std;
 
 const int SIZE = 3;
