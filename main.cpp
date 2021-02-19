@@ -75,92 +75,93 @@ void Play(char player) {
     } while (board[row][col] != 'Х' && board[row][col] != 'О');
 }
 
+bool ChekWin(char player) {
+    int counter = 0;
+    if (player == 'Х') {
+        counter = counterX;
+    }
+    else {
+        counter = counterO;
+    }
+    if ((board[0][0] == player && board[0][1] == player && board[0][2] == player) ||
+        (board[1][0] == player && board[1][1] == player && board[1][2] == player) ||
+        (board[2][0] == player && board[2][1] == player && board[2][2] == player) ||
+        (board[0][0] == player && board[1][0] == player && board[2][0] == player) ||
+        (board[0][1] == player && board[1][1] == player && board[2][1] == player) ||
+        (board[0][2] == player && board[1][2] == player && board[2][2] == player) ||
+        (board[0][0] == player && board[1][1] == player && board[2][2] == player) ||
+        (board[2][0] == player && board[1][1] == player && board[0][2] == player)) {
+        PrintBoard();
+        cout << "Выиграл " << player << " за " << counter << " хода(ов)!!!" << endl;
+        return true;
+    }
+    else
+        return false;
+}
+
+bool ChekDraw(char player) {
+    bool draw = true;
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j) {
+            if (board[i][j] != 'Х' && board[i][j] != 'О') {
+                draw = false;
+            }
+        }
+    }
+    if (draw) {
+        PrintBoard();
+        cout << "Ничья!" << endl;
+        return true;
+    }
+    return false;
+}
+
+char PlayerChoice(char player) {
+    if (player == 'Х')
+        return player = 'О';
+    else
+        return player = 'Х';
+}
 
 int main()
 {
-    system("chcp 65001");
+    setlocale(LC_ALL, "Rus");
 
-    int row, col;
-    bool draw;
+    int choice = 0;
+    char player;
 
-    do {
-        PrintBoard();
-        cout << "Ход Крестика" << endl;
-        do {
-            do {
-                cout << "Введите номер строки (от  0 до 2) - ";
-                cin >> row;
-            } while (row < 0 || row > 2);
+    cout << "TicTacToe versia 1.0" << endl << endl;
 
-            do {
-                cout << "Введите номер столбца (от  0 до 2) - ";
-                cin >> col;
-            } while (col < 0 || col > 2);
-        } while (board[row][col] != ' ');
-        board[row][col] = 'X';
-        if ((board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X') ||
-            (board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X') ||
-            (board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X') ||
-            (board[0][0] == 'X' && board[1][0] == 'X' && board[2][0] == 'X') ||
-            (board[0][1] == 'X' && board[1][1] == 'X' && board[2][1] == 'X') ||
-            (board[0][2] == 'X' && board[1][2] == 'X' && board[2][2] == 'X') ||
-            (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') ||
-            (board[2][0] == 'X' && board[1][1] == 'X' && board[0][2] == 'X')) {
-            cout << "Выиграл Крестик" << endl;
+    do
+    {
+        cout << "Выберите кто ходит первым: 1 - 'Х'; 2 - 'О' " << endl;
+        cin >> choice; cout << endl;
+    } while (choice < 0 || choice > 2);
+
+    if (choice == 1) {
+        player = 'Х';
+    }
+    else {
+        player = 'О';
+    }
+
+    do
+    {
+        if (ChekDraw(player)) {
             break;
         }
-        draw = true;
-        for (int i = 0; i < SIZE; ++i) {
-            for (int j = 0; j < SIZE; ++j) {
-                if (board[i][j] == ' ') {
-                    draw = false;
-                }
+        else {
+            PrintBoard(); cout << endl;
+            cout << "Ход " << player << endl;
+            Play(player);
+            if (ChekWin(player)) {
+                break;
             }
+            player = PlayerChoice(player);
         }
-        if (draw) {
-            cout << "Ничья!" << endl;
-            break;
-        }
+    } while (!ChekDraw(player));
 
 
-        PrintBoard();
-        cout << "Ход Нолика" << endl;
-        do {
-            do {
-                cout << "Введите номер строки (от  0 до 2) - ";
-                cin >> row;
-            } while (row < 0 || row > 2);
 
-            do {
-                cout << "Введите номер столбца (от  0 до 2) - ";
-                cin >> col;
-            } while (col < 0 || col > 2);
-        } while (board[row][col] != ' ');
-        board[row][col] = 'O';
-        if ((board[0][0] == 'O' && board[0][1] == 'O' && board[0][2] == 'O') ||
-            (board[1][0] == 'O' && board[1][1] == 'O' && board[1][2] == 'O') ||
-            (board[2][0] == 'O' && board[2][1] == 'O' && board[2][2] == 'O') ||
-            (board[0][0] == 'O' && board[1][0] == 'O' && board[2][0] == 'O') ||
-            (board[0][1] == 'O' && board[1][1] == 'O' && board[2][1] == 'O') ||
-            (board[0][2] == 'O' && board[1][2] == 'O' && board[2][2] == 'O') ||
-            (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O') ||
-            (board[2][0] == 'O' && board[1][1] == 'O' && board[0][2] == 'O')) {
-            cout << "Выиграл Нолик" << endl;
-            break;
-        }
-        draw = true;
-        for (int i = 0; i < SIZE; ++i) {
-            for (int j = 0; j < SIZE; ++j) {
-                if (board[i][j] == ' ') {
-                    draw = false;
-                }
-            }
-        }
-        if (draw) {
-            cout << "Ничья!" << endl;
-            break;
-        }
-
-    } while (true);
-   
 }
+
