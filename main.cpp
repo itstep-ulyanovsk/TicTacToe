@@ -59,7 +59,7 @@ int main()
             }
         }
         if (draw) {
-            cout << "Ничья!" << endl;
+            cout << "Ничья!!!!" << endl;
             break;
         }
 
