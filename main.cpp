@@ -118,7 +118,7 @@ bool ChekDraw(char player) {
 
 char PlayerChoice(char player) {
     if (player == 'Х')
-        return player = 'О';
+        return 'О';
     else
         return player = 'Х';
 }
@@ -164,4 +164,3 @@ int main()
 
 
 }
-
