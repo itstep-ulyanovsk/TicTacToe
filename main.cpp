@@ -120,7 +120,7 @@ char PlayerChoice(char player) {
     if (player == 'Х')
         return 'О';
     else
-        return player = 'Х';
+        return 'Х';
 }
 
 int main()
