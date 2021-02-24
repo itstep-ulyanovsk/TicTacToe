@@ -1,22 +1,9 @@
 #include <iostream>
+#include "FunBoard.h"
 
 using namespace std;
 
 int counterX = 0, counterO = 0;
-const int SIZE = 3;
-char board[SIZE][SIZE] = { {'1', '2', '3'},
-                          {'4', '5', '6'},
-                          {'7', '8', '9'} };
-
-void PrintBoard()
-{
-    for (int i = 0; i < SIZE; ++i) {
-        for (int j = 0; j < SIZE; ++j) {
-            cout << "|" << board[i][j] << "|";
-        }
-        cout << endl;
-    }
-}
 
 void Play(char player) {
     int row = 0, col = 0;
