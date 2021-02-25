@@ -1,6 +1,9 @@
-cmake_minimum_required(VERSION 3.17)
-project(TicTacToe_Ulyanovsk)
+﻿# CMakeList.txt: файл проекта CMake верхнего уровня; проведите глобальную конфигурацию
+# и включите сюда подпроекты.
+#
+cmake_minimum_required (VERSION 3.8)
 
-set(CMAKE_CXX_STANDARD 14)
+project ("TicTacToe")
 
-add_executable(TicTacToe_Ulyanovsk main.cpp)
+# Включите подпроекты.
+add_subdirectory ("TicTacToe")

@@ -18,4 +18,3 @@ char PlayerSelect(char player) {
     else
         return 'Õ';
 }
-

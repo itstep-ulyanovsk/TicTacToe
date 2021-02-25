@@ -1,8 +1,4 @@
-#include <iostream>
-#include "FunBoard.h"
-#include "FunChek.h"
-#include "FunPlayer.h"
-#include "FunPlay.h"
+﻿#include "TicTacToe.h"
 
 using namespace std;
 
@@ -39,4 +35,6 @@ int main()
             cout << "Ничья!" << endl;
         }
     } while (!ChekDraw());
+	
+    return 0;
 }

@@ -42,4 +42,3 @@ void Play(char player) {
 
     } while (answear < 1 || answear > 10 || chek);
 }
-
