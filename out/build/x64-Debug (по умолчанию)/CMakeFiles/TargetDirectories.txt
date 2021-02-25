@@ -1,3 +1,0 @@
-D:/SourceVS/TicTacToe/out/build/x64-Debug (по умолчанию)/CMakeFiles/edit_cache.dir
-D:/SourceVS/TicTacToe/out/build/x64-Debug (по умолчанию)/CMakeFiles/TicTacToe_Ulyanovsk.dir
-D:/SourceVS/TicTacToe/out/build/x64-Debug (по умолчанию)/CMakeFiles/rebuild_cache.dir
