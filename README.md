@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/olgabulagina/tictactoe/badge/main)](https://www.codefactor.io/repository/github/olgabulagina/tictactoe/overview/main)
+
 # Игра "Крестики-Нолики"
 
 ## Задание
