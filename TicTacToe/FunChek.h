@@ -6,11 +6,9 @@ using namespace std;
 
 // проверка на выигрыш диагоналей
 bool ChekWinDiagonal(char player, int size) {
-
     bool DiagonalRight = true;
     bool DiagonalLeft = true;
     for (int i = 0; i < size; i++) {
-
         DiagonalRight = DiagonalRight && (board[i][i] == player);
         DiagonalLeft = DiagonalLeft && (board[size - i - 1][i] == player);
     }

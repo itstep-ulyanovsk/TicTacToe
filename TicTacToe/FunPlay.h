@@ -6,7 +6,6 @@ using namespace std;
 
 int points = 0, pointsX = 0, pointsO = 0;
 int answear = 0;
-
 // подсчет очков для игроков
 int Scoring(char player, int points) {
     if (player == 'Х') {
